@@ -140,4 +140,11 @@
         app:layout_constraintEnd_toStartOf="@id/txtViews"
         app:srcCompat="@drawable/ic_views_24"/>
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/common_spacing"
+        app:layout_constraintTop_toBottomOf="@+id/imgFavourite"
+        android:background="@color/colorPinkRed" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
