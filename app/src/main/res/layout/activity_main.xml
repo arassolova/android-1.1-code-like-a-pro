@@ -52,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/common_spacing"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/description_post_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_more_vert_24"/>
@@ -84,11 +85,12 @@
         app:constraint_referenced_ids="txtContent"/>
 
     <ImageButton
-        android:id="@+id/imgFavourite"
+        android:id="@+id/imgLike"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/common_spacing"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/description_post_like"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barrier2"
         app:srcCompat="@drawable/ic_favorite_24"/>
@@ -97,40 +99,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/common_spacing"
-        app:layout_constraintTop_toTopOf="@id/imgFavourite"
-        app:layout_constraintStart_toEndOf="@+id/imgFavourite"
-        app:layout_constraintBottom_toBottomOf="@+id/imgFavourite"
+        app:layout_constraintTop_toTopOf="@id/imgLike"
+        app:layout_constraintStart_toEndOf="@+id/imgLike"
+        app:layout_constraintBottom_toBottomOf="@+id/imgLike"
         tools:text="@sample/posts.json/data/likes"/>
     <ImageButton
-        android:id="@+id/imgReposts"
+        android:id="@+id/imgShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/common_spacing"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/description_post_share"
         app:layout_constraintStart_toEndOf="@+id/txtLikes"
         app:layout_constraintTop_toTopOf="@+id/txtLikes"
         app:layout_constraintBottom_toBottomOf="@+id/txtLikes"
-        app:srcCompat="@drawable/ic_reposts_24"/>
+        app:srcCompat="@drawable/ic_share_24"/>
     <TextView
-        android:id="@+id/txtReposts"
+        android:id="@+id/txtShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/common_spacing"
-        app:layout_constraintTop_toTopOf="@+id/imgReposts"
-        app:layout_constraintBottom_toBottomOf="@+id/imgReposts"
-        app:layout_constraintStart_toEndOf="@+id/imgReposts"
-        tools:text="@sample/posts.json/data/reposts"/>
+        app:layout_constraintTop_toTopOf="@+id/imgShare"
+        app:layout_constraintBottom_toBottomOf="@+id/imgShare"
+        app:layout_constraintStart_toEndOf="@+id/imgShare"
+        tools:text="@sample/posts.json/data/share"/>
 
     <TextView
         android:id="@+id/txtViews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/imgViews"
-        app:layout_constraintBottom_toBottomOf="@id/imgViews"
+        app:layout_constraintTop_toTopOf="@id/imgView"
+        app:layout_constraintBottom_toBottomOf="@id/imgView"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="@sample/posts.json/data/views"/>
-    <ImageButton
-        android:id="@+id/imgViews"
+    <ImageView
+        android:id="@+id/imgView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
@@ -141,10 +144,11 @@
         app:srcCompat="@drawable/ic_views_24"/>
 
     <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
+        android:id="@+id/imgPinkRedLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
         android:layout_marginTop="@dimen/common_spacing"
-        app:layout_constraintTop_toBottomOf="@+id/imgFavourite"
+        app:layout_constraintTop_toBottomOf="@+id/imgLike"
         android:background="@color/colorPinkRed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
