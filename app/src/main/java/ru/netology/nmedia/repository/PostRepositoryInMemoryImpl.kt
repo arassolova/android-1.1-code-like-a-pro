@@ -97,8 +97,6 @@ class PostRepositoryInMemoryImpl : PostRepository {
             if (it.id != id) it else it.copy(share = it.share + 1)
         }
         data.value = posts
-        //posts = posts.copy(share = posts.share + 1)
-        //data.value = posts
     }
 
 
