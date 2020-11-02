@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
             },
             onShareListener = {
                 viewModel.shareById(it.id)
+            },
+            onRemoveListener = {
+                viewModel.removeById(it.id)
             }
         )
         binding.listView.adapter = adapter
