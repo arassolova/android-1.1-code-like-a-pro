@@ -3,8 +3,11 @@ package ru.netology.nmedia
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 import ru.netology.nmedia.adapter.OnInteractionListener
 import ru.netology.nmedia.adapter.PostsAdapter
 import ru.netology.nmedia.databinding.ActivityMainBinding
@@ -51,6 +54,10 @@ class MainActivity : AppCompatActivity() {
                 requestFocus()
                 setText(post.content)
             }
+            with(binding.grpEditMessage) {
+                grpEditMessage.visibility = View.VISIBLE
+                txtEditPost.setText(post.content)
+            }
         }
 
         binding.imgSave.setOnClickListener {
@@ -65,6 +72,15 @@ class MainActivity : AppCompatActivity() {
                 viewModel.changeContent(text.toString())
                 viewModel.save()
 
+                setText("")
+                clearFocus()
+                AndroidUtils.hideKeyboard(this)
+            }
+        }
+
+        binding.btnCancelEdit.setOnClickListener {
+            grpEditMessage.visibility = View.GONE
+            with(binding.contentEdit){
                 setText("")
                 clearFocus()
                 AndroidUtils.hideKeyboard(this)
