@@ -16,7 +16,6 @@ interface OnInteractionListener {
     fun onShare(post: Post) {}
     fun onEdit(post: Post) {}
     fun onRemove(post: Post) {}
-    fun onEditCancel(post: Post) {}
 }
 
 class PostsAdapter(
@@ -43,16 +42,15 @@ class PostViewHolder(
             txtAuthor.text = post.author
             txtPublished.text = post.published
             txtContent.text = post.content
-            txtLikes.text = numbersString(post.likes)
-            txtShare.text = numbersString(post.share)
+            btnShare.text = numbersString(post.share)
 
-            imgLike.setImageResource(
-                if (post.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_favorite_24
-            )
-            imgLike.setOnClickListener {
+            btnLike.isChecked = post.likedByMe
+            btnLike.text = numbersString(post.likes)
+
+            btnLike.setOnClickListener {
                 onInteractionListener.onLike(post)
             }
-            imgShare.setOnClickListener {
+            btnShare.setOnClickListener {
                 onInteractionListener.onShare(post)
             }
             imgMenu.setOnClickListener {
