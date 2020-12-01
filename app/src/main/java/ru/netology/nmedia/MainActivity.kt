@@ -76,6 +76,10 @@ class MainActivity : AppCompatActivity() {
                 clearFocus()
                 AndroidUtils.hideKeyboard(this)
             }
+            with(binding.grpEditMessage) {
+                grpEditMessage.visibility = View.GONE
+                txtEditPost.setText("")
+            }
         }
 
         binding.btnCancelEdit.setOnClickListener {
